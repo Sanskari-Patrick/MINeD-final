@@ -58,7 +58,7 @@ Contributing
 We welcome contributions to improve the chatbot! Please feel free to fork the repository, make your changes, and submit a pull request.
 
 ## License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the Apache 2.0 License- see the LICENSE file for details.
 
 ## Contact
-For any queries or further assistance, please contact [Your Name or Organization's Contact Information].
+For any queries or further assistance, please contact [Pranshu Desai](https://github.com/PranshUwU).
