@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles2.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    <title>Research Insights AI</title>
+</head>
+
+<body class="font-['DM_Sans'] bg-gradient-to-br from-white to-[#7FC7D9]">
+
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold mb-4 text-center">Welcome to Research Insights AI</h1>
+        <p class="mb-8 leading-relaxed text-lg text-gray-500 text-center">Designed to assist with interpreting and
+            answering queries on research papers, ensuring accurate and relevant information while facilitating the
+            user's understanding of the material.</p>
+
+        <!-- File Upload Form -->
+        <div class="mb-4 text-center">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="document">Upload Document</label>
+            <input type="file" id="document" name="document" accept=".pdf, .docx, .tex, .ppt, .pptx"
+                class="shadow border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            <button onclick="uploadDocument()"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Upload</button>
+        </div>
+
+        <!-- Question Submission Form -->
+        <div class="mb-4 text-center">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="question">Ask a Question</label>
+            <textarea id="question" name="question" rows="1"
+                class="w-full bg-gray-100 bg-opacity-50 rounded focus:ring-2 focus:ring-purple-200 focus:bg-transparent border border-gray-300 focus:border-purple-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"></textarea>
+
+            <button onclick="submitQuestion()"
+                class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Submit Question</button>
+        </div>
+
+        <!-- Answer Display -->
+        <div id="answer" class="mt-4 text-center">
+            <!-- Answers will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        function uploadDocument() {
+            const input = document.getElementById('document');
+            const data = new FormData();
+            data.append('document', input.files[0]);
+
+            fetch('/upload', {
+                method: 'POST',
+                body: data,
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                    alert('Document uploaded successfully!');
+                    input.value = ''; // Clear the input field
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        }
+
+        function submitQuestion() {
+            const question = document.getElementById('question').value;
+            fetch('/ask', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ question: question }),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                    document.getElementById('answer').textContent = data.answer;
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        }
+    </script>
+</body>
+
+</html>

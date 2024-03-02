@@ -1,0 +1,188 @@
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+<style>
+   
+body {
+    font-family: 'DM Sans'; /* Using DM Sans from Google Fonts with Helvetica fallback */
+    background:linear-gradient(to bottom right, #ffffff, #7FC7D9);
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 38vh;
+}
+
+.card {
+    width: 200px; /* Set a fixed width for the card */
+    height: 250px; /* Set a fixed height for the card */
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    backdrop-filter: blur(20px); /* Apply blur effect to background elements */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Add a subtle border */
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    margin: 10px; /* Adjust margin to reduce spacing between cards */
+    font-family: 'DM Sans';
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Align content to the bottom */
+}
+
+/* .card {
+    width: 200px; 
+    height: 250px;
+    background-color: rgba(255, 255, 255, 0.2); 
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    margin: 10px;
+    font-family: 'DM Sans';
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; 
+} */
+
+
+.card p {
+    margin-top: auto; /* Push the paragraph to the bottom */
+}
+
+
+  .card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  .card img {
+    width: 50px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  .relative {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .relative img {
+        position: absolute;
+        left: 10px; /* Adjust as needed to position the image within the input */
+        top: 50%; /* Center vertically */
+        transform: translateY(-50%); /* Adjust vertical position to truly center */
+        height: 20px; /* Reduced height */
+        width: 20px; /* Reduced width */
+    }
+    .relative input {
+        width: 100%;
+        background: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+        border: 1px solid #ccc; /* Light grey border */
+        border-radius: 0.375rem; /* Rounded corners */
+        outline: none;
+        text-indent: 40px; /* Increase text indent to avoid overlap with the image */
+        padding: 8px 16px; /* Adjust padding as needed */
+        font-size: 1rem; /* Base font size */
+        color: #4a5568; /* Text color */
+        transition: border-color 0.2s ease-in-out; /* Smooth transition for focus effects */
+    }
+    /* Removed the background-color change on focus */
+    .relative input:focus {
+        border-color: #805ad5; /* Focus border color */
+    }
+  
+  </style>
+
+        <section class="text-gray-900 body-font">
+            <div class="container mx-auto flex flex-col px-5 py-0 justify-center items-center">
+                <div class="w-full md:w-2/3 flex flex-col mb-0 items-center text-center">
+                    <div class="flex flex-col justify-center items-center">
+                        <h1 class="title-font sm:text-5xl text-4xl mb-4 font-medium text-gray-900">Welcome to
+                            <span style="background: linear-gradient(to left, #0F1040, #7FC7D9);-webkit-background-clip: text;color: transparent;">
+                                Research Insights AI
+                            </span>
+                        </h1>
+                        <p class="mb-8 leading-relaxed text-lg text-gray-500">Designed to assist with interpreting and answering queries on research papers, 
+                            ensuring accurate and relevant information while facilitating the user's understanding of the material.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+                
+        
+        <div class="container mx-auto flex justify-center">
+            <div class="card">
+                <p>Welcome! Upload your research paper and ask any questions you have about its content, methodology, or findings.</p>
+            </div>
+        
+            <div class="card">
+                <p>Have a research paper you need help understanding? Upload it here and ask away!</p>
+            </div>
+            
+            <div class="card">
+                <p>Curious about a particular study? Share the paper and fire away with your questions!</p>
+            </div>
+            
+            <div class="card">
+                <p>Seeking insights from academic literature? Upload your research paper and let's dive into the details together!</p>
+            </div>
+        </div>
+
+             <!-- <section class="text-gray-600 body-font">
+                <div class="container mx-auto flex flex-col px- py-1 justify-center items-center">
+                    <div class="w-full md:w-2/3 flex flex-col mb-1 items-center text-center">
+                        <div class="flex w-full justify-center items-end space-y-4">
+                            <input type="text" id="hero-field" name="hero-field" class="w-full bg-gray-100 bg-opacity-50 rounded focus:ring-2 focus:ring-purple-200 focus:bg-transparent border border-gray-300 focus:border-purple-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                            <img src="data:image/png;base64,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">
+                            
+                        </div>
+                        <div class="flex w-full justify-center items-end space-y-4 mt-4">
+                            <button class="inline-flex text-white border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded text-lg" style="background-color: #7FC7D9;">Button</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+             -->
+             <!-- <section class="text-gray-600 body-font">
+                <div class="container mx-auto flex flex-col px-5 py-24 justify-center items-center">
+                    <div class="w-full md:w-2/3 flex flex-col mb-16 items-center text-center">
+                        <div class="relative w-full">
+                            <img src="data:image/png;base64,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" alt="Embedded within input" class="absolute left-0 h-full">
+                            <input type="text" id="hero-field" name="hero-field" class="w-full bg-gray-100 bg-opacity-50 rounded focus:ring-2 focus:ring-purple-200 focus:bg-transparent border border-gray-300 focus:border-purple-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out pl-10">
+                            
+                        </div>
+                        <div class="flex w-full justify-center items-end space-y-4 mt-4">
+                            <button class="inline-flex text-white border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded text-lg" style="background-color: #7FC7D9;">Button</button>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+
+            <section class="text-gray-600 body-font">
+                <div class="container mx-auto flex flex-col px-5 py-24 justify-center items-center">
+                    <div class="w-full md:w-2/3 flex flex-col mb-16 items-center text-center">
+                        <div class="relative w-full">
+                            <img src="data:image/png;base64,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" alt="Embedded within input" class="absolute left-0 h-full">
+                            <input type="text" id="hero-field" name="hero-field" class="w-full bg-gray-100 bg-opacity-50 rounded focus:bg-transparent border border-gray-300 focus:border-purple-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out pl-10">
+                        </div>
+                        <div class="flex w-full justify-center items-end space-y-4 mt-4">
+                            <button class="inline-flex text-white border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded text-lg" style="background-color: #7FC7D9;">Button</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+
+
+            
+            </div>
