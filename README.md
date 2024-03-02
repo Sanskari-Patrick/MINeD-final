@@ -11,6 +11,8 @@ Before you can run the chatbot, you'll need to have the following installed:
 
 Python 3.x
 Pip (Python package installer)
+You can check other remaining dependencies in the requirements.txt file.
+
 Installation
 Clone the Repository
 
