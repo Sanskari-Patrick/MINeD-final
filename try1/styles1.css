@@ -1,0 +1,61 @@
+body {
+    font-family: 'DM Sans'; /* Using DM Sans from Google Fonts with Helvetica fallback */
+    background:linear-gradient(to bottom right, #ffffff, #7FC7D9);
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 38vh;
+}
+
+.card {
+    width: 200px; /* Set a fixed width for the card */
+    height: 250px; /* Set a fixed height for the card */
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    backdrop-filter: blur(20px); /* Apply blur effect to background elements */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Add a subtle border */
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    margin: 10px; /* Adjust margin to reduce spacing between cards */
+    font-family: 'DM Sans';
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Align content to the bottom */
+}
+
+/* .card {
+    width: 200px; 
+    height: 250px;
+    background-color: rgba(255, 255, 255, 0.2); 
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    margin: 10px;
+    font-family: 'DM Sans';
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; 
+} */
+
+
+.card p {
+    margin-top: auto; /* Push the paragraph to the bottom */
+}
+
+
+  .card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  .card img {
+    width: 50px;
+    height: auto;
+    margin-bottom: 20px;
+  }

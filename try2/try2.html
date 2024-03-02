@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles2.css">
+    <script src="scripts2.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<style>
+    body {
+        font-family: 'DM Sans';
+        background: linear-gradient(to bottom right, #ffffff, #7FC7D9);
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 38vh;
+    }
+
+    .card {
+        width: 200px;
+        height: 250px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+        margin: 10px;
+        font-family: 'DM Sans';
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        transition: opacity 1s ease;
+        /* Added transition */
+    }
+
+    .card p {
+        margin-top: auto;
+    }
+
+    .card:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .card img {
+        width: 50px;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .gradient-text {
+        background: linear-gradient(to left, #0F1040, #7FC7D9);
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+
+    .search-section {
+        opacity: 1;
+        /* Initially visible */
+        transition: opacity 1s ease;
+        /* Added transition */
+        height: auto;
+        /* Ensure search section doesn't have fixed height */
+    }
+
+    .vanish {
+        opacity: 0;
+        /* Fade out */
+        height: 0;
+        /* Hide */
+    }
+
+    .custom-upload-button {
+        background-color: #069ea9;
+        opacity: 0.8;
+        color: white;
+        font-weight: bold;
+        padding: 8px 16px;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
+
+    .custom-upload-button:hover {
+        background-color: #2779bd;
+    }
+</style>
+
+<script>
+    // Function for document upload
+    function uploadDocument() {
+        const input = document.getElementById('document');
+        const data = new FormData();
+        data.append('document', input.files[0]);
+
+        fetch('/upload', {
+            method: 'POST',
+            body: data,
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            alert('Document uploaded successfully!');
+            input.value = ''; // Clear the input field
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+            alert('Upload failed!');
+        });
+    }
+
+    // Function for submitting a question
+    function submitQuestion() {
+        const question = document.getElementById('hero-field').value; // Ensure this ID matches your question input
+        fetch('/ask', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ question: question }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            // Assuming you have an element to display the answer
+            document.getElementById('answer').textContent = data.answer;
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+    }
+
+    import Typed from 'typed.js';
+
+    var options = {
+        strings: ['<i>First</i> sentence.', '&amp; a second sentence.'],
+        typeSpeed: 40
+    };
+
+    var typed = new Typed('.element', options);
+
+</script>
+
+<body>
+
+
+    <section class="text-gray-900 body-font">
+        <div class="container mx-auto flex flex-col px-5 py-0 justify-center items-center">
+            <div class="w-full md:w-2/3 flex flex-col mb-0 items-center text-center">
+                <div class="flex flex-col justify-center items-center">
+                    <h1 class="title-font sm:text-5xl text-4xl mb-4 font-medium text-gray-900">Welcome to
+                        <span class="gradient-text">Research Insights AI</span>
+                    </h1>
+                    <p class="mb-8 leading-relaxed text-lg text-gray-500">Designed to assist with interpreting and
+                        answering queries on research papers,
+                        ensuring accurate and relevant information while facilitating the user's understanding of the
+                        material.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container mx-auto flex justify-center">
+        <div class="card">
+            <p>Welcome! Upload your research paper and ask any questions you have about its content, methodology, or
+                findings.</p>
+        </div>
+
+        <div class="card">
+            <p>Have a research paper you need help understanding? Upload it here and ask away!</p>
+        </div>
+
+        <div class="card">
+            <p>Curious about a particular study? Share the paper and fire away with your questions!</p>
+        </div>
+
+        <div class="card">
+            <p>Seeking insights from academic literature? Upload your research paper and let's dive into the details
+                together!</p>
+        </div>
+    </div>
+
+    <section class="text-gray-600 body-font">
+        <div class="container mx-auto flex flex-col px- py-1 justify-center items-center">
+            <div class="w-full md:w-2/3 flex flex-col mb-1 items-center text-center">
+                <!-- Flex container for upload input, text input, and Button -->
+                <div class="flex w-full justify-center items-center space-x-4">
+                    <!-- Upload Document Label and Input -->
+                    <div class="flex items-center space-x-2">
+                        <label for="document" class="block text-gray-700 text-sm font-bold mb-2 cursor-pointer">
+                            Upload Document
+                        </label>
+                        <input type="file" id="document" name="document" accept=".pdf, .docx, .tex, .ppt, .pptx"
+                            class="shadow border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline hidden"
+                            onchange="checkFile()">
+                    </div>
+                    <!-- Text Input -->
+                    <input type="text" id="hero-field" name="hero-field"
+                        class="flex-grow bg-gray-100 bg-opacity-50 rounded focus:ring-2 focus:ring-gray-200 focus:border-gray-200 border border-gray-300 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                    <!-- Right-side Button -->
+                    <button class="bg-purple-500 hover:bg-purple-600 text-white font-bold p-2 rounded"
+                        style="background-color: #7FC7D9; width: 32px; height: 32px;">
+                        B
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+    function checkFile() {
+        var file = document.getElementById('document').files[0];
+        if (file) {
+            alert('Document uploaded successfully!');
+        } else {
+            alert('No document selected or document upload failed!');
+        }
+    }
+    </script>
+
+
+</body>
+
+</html>

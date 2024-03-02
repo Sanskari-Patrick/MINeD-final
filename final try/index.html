@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles2.css">
+    <script src="scripts2.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.0.13/css/all.css' integrity='sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp' crossorigin='anonymous'>
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <div style="height: 100vh; width: auto;">
+        <div class="chat-section" style="height: 75vh;">
+            <section class="text-gray-900 body-font">
+                <div class="container mt-5 mx-auto flex flex-col px-5 py-0 justify-center items-center">
+                    <div class="w-full md:w-2/3 flex flex-col items-center text-center">
+                        <div class="flex flex-col justify-center items-center">
+                            <h1 class="title-font sm:text-5xl text-4xl mb-4 font-medium text-gray-900">Welcome to
+                                <span class="gradient-text">Research Insights AI</span>
+                            </h1>
+                            <p id="welcome-text" class="leading-relaxed text-lg text-gray-500">Designed to assist with interpreting and
+                                answering queries on research papers,
+                                ensuring accurate and relevant information while facilitating the user's understanding of the
+                                material.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div id="chatbox" class="container w-50 hidden">
+                Lorem, ipsum dolor Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea nihil veniam aliquid minus. Harum sint asperiores perferendis iure ullam, quae nesciunt, qui sit deleniti, deserunt illum nobis dolore! Ullam, praesentium voluptatum. Quasi mollitia distinctio exercitationem, id perspiciatis fugit! Quidem assumenda fuga expedita minus aspernatur eaque totam sunt labore iusto ut doloribus, sit magni voluptatibus voluptas dolorem non debitis modi molestiae, itaque possimus qui impedit. Perferendis impedit explicabo nisi sunt iste modi perspiciatis? Inventore eligendi vitae id autem quo laudantium suscipit voluptate, commodi possimus pariatur magni non debitis explicabo nobis modi. Tempore ex nostrum facere repudiandae sit voluptates quas maxime reprehenderit? sit amet consectetur adipisicing elit. Quod quis quo itaque in, totam consequatur? Vel dolores cupiditate voluptatibus ab recusandae. Quibusdam laborum aliquid exercitationem numquam, ipsa consequuntur? Praesentium, veniam excepturi odit ipsa illo debitis temporibus harum ducimus maiores, natus quas minima iste facere tempora? Vitae soluta autem voluptatum. Similique, maiores iure cumque voluptatibus dignissimos aperiam sed! Voluptates veritatis cupiditate debitis fuga rem pariatur ea, cum, laudantium impedit assumenda fugiat, delectus doloremque! Culpa, est. Laborum debitis odit, pariatur praesentium repellendus provident quo quos eveniet distinctio. Quisquam culpa ducimus ad architecto sapiente, eveniet ipsum blanditiis saepe cum praesentium eum laboriosam vero.quos eveniet distinctio. Quisquam culpa ducimus ad architecto sapiente, eveniet ipsum blanditiis saepe cum praesentium eum laboriosam vero.quos eveniet distinctio. Quisquam culpa ducimus ad architecto sapiente, eveniet ipsum blanditiis saepe cum praesentium eum laboriosam vero.quos eveniet distinctio. Quisquam culpa ducimus ad architecto sapiente, eveniet ipsum blanditiis saepe cum praesentium eum laboriosam vero.quos eveniet distinctio. Quisquam culpa ducimus ad architecto sapiente, eveniet ipsum blanditiis saepe cum praesentium eum laboriosam vero. Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum dicta ipsum laboriosam! Similique ea possimus amet molestiae veniam, cumque culpa architecto iure neque nemo quidem, ullam sapiente, nesciunt fuga reiciendis sequi. Blanditiis doloremque iure optio quisquam nemo illum culpa provident temporibus, rem deleniti facilis voluptate doloribus minus saepe possimus debitis omnis mollitia obcaecati tempora cumque! Numquam alias officia quo laudantium rerum odio consequuntur harum eius. Assumenda repudiandae nostrum eveniet odio veritatis repellendus modi nulla commodi voluptatem magnam voluptates, est inventore? Dolor veniam, nulla incidunt facilis corporis sed non maiores voluptas. Libero voluptates at consectetur fuga, odio ipsam vel quos odit?
+            </div>
+
+            <div id="cards-container" class="container mx-auto flex justify-content-center mt-5">
+                <div class="card">
+                    <p>Welcome! Upload your research paper and ask any questions you have about its content, methodology, or
+                        findings.</p>
+                </div>
+
+                <div class="card">
+                    <p>Have a research paper you need help understanding? Upload it here and ask away!</p>
+                </div>
+
+                <div class="card">
+                    <p>Curious about a particular study? Share the paper and fire away with your questions!</p>
+                </div>
+
+                <div class="card">
+                    <p>Seeking insights from academic literature? Upload your research paper and let's dive into the details
+                        together!</p>
+                </div>
+            </div>
+        </div>
+
+        <section style="">
+            <div class="container w-50 d-flex justify-content-center d-flex flex-column">
+                <input onchange="checkFile()" type="file" id="document" name="document" accept=".pdf, .docx, .tex, .ppt, .pptx" class="btn">
+
+                <div class="">
+                    <input type="text" id="hero-field" name="hero-field" style="width: 90%;"
+                    class="mr-3 bg-gray-100 bg-opacity-50 rounded focus:ring-2 focus:ring-gray-200 focus:border-gray-200 border border-gray-300 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+
+                    <button id="toggleButton" onclick="submitQuestion()" class="bg-purple-500 hover:bg-purple-600 text-white rounded btn"
+                        style="background-color: #7FC7D9;">
+                        <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+    <script src="script.js"></script>
+    <script src="script2.js"></script>
+
+</body>
+
+</html>
