@@ -16,7 +16,7 @@ Clone the Repository
 
 bash
 Copy code
-git clone https://github.com/your-repo/research-paper-chatbot.git
+git clone git@github.com:PranshUwU/MINeD-final.git
 cd research-paper-chatbot
 Setup Virtual Environment
 
